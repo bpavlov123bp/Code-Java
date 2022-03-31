@@ -20,6 +20,6 @@ public class Zad3_Lesson9 {
         {
             bonus = salary * 0.10;
         }
-        System.out.println("The bonus is: " + salary);
+        System.out.printf("The bonus is %.2f lv.", bonus);
     }
 }
