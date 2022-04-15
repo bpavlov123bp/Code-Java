@@ -33,7 +33,7 @@ public class Zad5_Lesson5 {
                 numCount++;
             }
 
-            else if((ch >= 'A' || ch >= 'a') && (ch <= 'Z' || ch <= 'z'))
+            else if((ch >= 'A' || ch >= 'a') || (ch <= 'Z' || ch <= 'z'))
             {
                 charCount++;
             }
@@ -46,6 +46,6 @@ public class Zad5_Lesson5 {
                 return false;
             }
         }
-        return (charCount >= 2 && numCount >= 2);
+        return (charCount >= 2 || numCount >= 2 || special >= 2);
     }
 }
