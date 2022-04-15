@@ -9,20 +9,13 @@ public class Zad5_Lesson5 {
         System.out.println("4. A password must have minimum one special symbol.");
         System.out.print("Input a password: ");
         String pass = input.nextLine();
-        if(isValidPassword(pass))
-        {
-            System.out.println("Password isvalid: " + pass);
-        }
-        else
-        {
-
-            do {
+           do {
                System.out.println("Not a valid pasword! Try again!");
                System.out.print("Enter valid password: ");
                pass = input.nextLine();
             }while(!isValidPassword(pass));
+            System.out.println("Password is valid: " + pass);
         }
-    }
     public static boolean isValidPassword(String password)
     {
         if(password.length() < 8)
@@ -31,6 +24,7 @@ public class Zad5_Lesson5 {
         }
         int charCount = 0;
         int numCount = 0;
+        int special = 0;
         for(int i = 0; i < password.length(); i++)
         {
             char ch = password.charAt(i);
@@ -39,20 +33,19 @@ public class Zad5_Lesson5 {
                 numCount++;
             }
 
-            else if(isLetter(ch))
+            else if((ch >= 'A' || ch >= 'a') && (ch <= 'Z' || ch <= 'z'))
             {
                 charCount++;
+            }
+            else if(ch == '@' || ch == '#' || ch == '/' || ch == '!' || ch == ')' || ch == '(')
+            {
+                special++;
             }
             else
             {
                 return false;
             }
         }
-        return (charCount >=2 && numCount >= 2);
-    }
-    public static boolean isLetter(char ch)
-    {
-        ch = Character.toUpperCase(ch);
-        return (ch >= 'A' && ch <= 'Z');
+        return (charCount >= 2 && numCount >= 2);
     }
 }
