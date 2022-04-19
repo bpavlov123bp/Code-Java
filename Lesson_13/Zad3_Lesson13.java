@@ -17,8 +17,6 @@ public class Zad3_Lesson13 {
 
         for(int i = 0; i < players; i++)
         {
-                System.out.println("Player " + i + ": ");
-
             dice[i] = rand.nextInt(6) + 1;
         }
         for(int q = 0; q < dice.length; q++)
